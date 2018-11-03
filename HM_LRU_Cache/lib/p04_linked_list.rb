@@ -21,6 +21,11 @@ end
 
 class LinkedList
   def initialize
+    @head = Node.new
+    @tail = Node.new
+    @head.next = @tail
+    @tail.prev = @head
+    @store = [@head, @tail]
   end
 
   def [](i)
@@ -29,12 +34,14 @@ class LinkedList
   end
 
   def first
+    @store.shift(self)
   end
 
   def last
   end
 
   def empty?
+    
   end
 
   def get(key)
